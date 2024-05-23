@@ -1,3 +1,3 @@
 export const environment = {
-    apiKEY: 'dadb019730c0075868955d1ec94040bb'
+    apiKEY: '' // Change this for your own API in https://tmdb.org -> https://developer.themoviedb.org/docs/getting-started
 };
