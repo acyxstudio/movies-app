@@ -53,5 +53,34 @@ export class MoviesService {
       )
       .pipe(map((data) => data.cast))
   }
-  
+
+  fetchMovieGenreList(language: string, pageNumber = 1) {
+    return this.httpClient
+      .get<Movies>(`${this.apiUrl}/genre/movie/list?page=${pageNumber}&api_key=${this.apiKey}`)
+  }
+
+  fetchMoviesByGenre(type: string, pageNumber = 1) {
+    return this.httpClient
+      .get<Movies>(`${this.apiUrl}/movie/${type}?page=${pageNumber}&api_key=${this.apiKey}`)
+  }
+
+  fetchMoviesByUpcoming(pageNumber = 1) {
+    return this.httpClient
+      .get<Movies>(`${this.apiUrl}/movie/upcoming?page=${pageNumber}&api_key=${this.apiKey}`)
+  }
+
+  fetchMoviesByQuery(query:string, pageNumber = 1) {
+    return this.httpClient
+      .get<Movies>(`${this.apiUrl}/movie/?query=${query}&include_adult=false&page=${pageNumber}&api_key=${this.apiKey}`)
+  }
+
+  fetchTVGenreList(language: string, pageNumber = 1) {
+    return this.httpClient
+      .get<Movies>(`${this.apiUrl}/genre/tv/list?page=${pageNumber}&api_key=${this.apiKey}`)
+  }
+  fetchTVDiscoverList(pageNumber = 1) {
+    return this.httpClient
+      .get<Movies>(`${this.apiUrl}/discover/tv/?page=${pageNumber}&api_key=${this.apiKey}`)
+  }
+
 }
