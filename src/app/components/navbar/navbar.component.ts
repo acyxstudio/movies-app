@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { VideoIconComponent} from '../../Icons/video-icon/video-icon.component';
+import { VideoIconComponent} from '../icons/video-icon/video-icon.component';
 import { SearchComponent } from '../search/search.component';
 
 @Component({

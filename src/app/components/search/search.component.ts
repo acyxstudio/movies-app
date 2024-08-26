@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchIconComponent } from '../../Icons/search-icon/search-icon.component';
+import { SearchIconComponent } from '../icons/search-icon/search-icon.component';
 
 @Component({
   selector: 'app-search',
