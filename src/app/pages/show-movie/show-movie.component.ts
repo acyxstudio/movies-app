@@ -4,12 +4,11 @@ import { AsyncPipe, CurrencyPipe, DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Movie } from '../../models/movie';
-import { Actor } from '../../models/credit';
-import { MovieComponent } from '../../components/movie/movie.component';
+import { IMovie } from '../../models/movie';
+import { IActor } from '../../models/credit';
 import { MoviesScrollerComponent } from '../../components/movies-scroller/movies-scroller.component';
 import { VideoComponent } from '../../components/video/video.component';
-import { Video } from '../../models/video';
+import { IVideo } from '../../models/video';
 
 @Component({
   selector: 'app-show-movie',
@@ -22,10 +21,10 @@ export class ShowMovieComponent {
 
   @Input() movieId: string = '';
   private moviesService = inject(MoviesService);
-  public movieObs$! : Observable<Movie>;
-  public movieCastObs$!: Observable<Actor[]>; 
-  public movieVideosObs$! : Observable<Video[]>;
-  public similarMoviesObs$!: Observable<Movie[]>;
+  public movieObs$! : Observable<IMovie>;
+  public movieCastObs$!: Observable<IActor[]>; 
+  public movieVideosObs$! : Observable<IVideo[]>;
+  public similarMoviesObs$!: Observable<IMovie[]>;
   public imagesBaseUrl = imagesBaseUrl;
   private activatedRouter = inject(ActivatedRoute);
   public showVideo = false;

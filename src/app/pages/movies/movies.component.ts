@@ -1,15 +1,15 @@
 import { Component, DestroyRef, inject } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { AsyncPipe } from '@angular/common';
-import { Movie } from '../../models/movie';
+import { IMovie } from '../../models/movie';
 import { MovieComponent } from '../../components/movie/movie.component';
-import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { InfiniteScrollDirective } from "ngx-infinite-scroll";
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [AsyncPipe,MovieComponent,InfiniteScrollModule],
+  imports: [AsyncPipe,MovieComponent,InfiniteScrollDirective],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css'
 })
@@ -18,7 +18,7 @@ export class MoviesComponent {
   private  pageNumber  =  1;
   private  destroyRef  =  inject(DestroyRef)
   public   moviesObs$  =  this.moviesService.fetchMoviesByType('popular', this.pageNumber);
-  public   moviesResults:  Movie[] = [];
+  public   moviesResults:  IMovie[] = [];
 
   ngOnInit(){
     this.moviesObs$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {

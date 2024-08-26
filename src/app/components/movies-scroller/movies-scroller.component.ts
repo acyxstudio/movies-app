@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { MovieComponent } from '../movie/movie.component';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
-import { Movie } from '../../models/movie';
+import { IMovie } from '../../models/movie';
 
 @Component({
   selector: 'app-movies-scroller',
@@ -13,7 +13,7 @@ import { Movie } from '../../models/movie';
 })
 export class MoviesScrollerComponent {
 
-  @Input() dataObs!: Observable<Movie[]>;
+  @Input() dataObs!: Observable<IMovie[]>;
   @ViewChild('content', { read: ElementRef })
   public content!: ElementRef<any>;
 

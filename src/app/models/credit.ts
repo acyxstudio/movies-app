@@ -1,8 +1,8 @@
-export interface Credits {
-    cast: Actor[];
+export interface ICredits {
+    cast: IActor[];
   }
 
-export interface Actor {
+export interface IActor {
     name: string;
     profile_path: string;
     character: string;

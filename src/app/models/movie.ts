@@ -1,4 +1,4 @@
-export interface Movie {
+export interface IMovie {
     id: number;
     adult: boolean;
     backdrop_path: string;
@@ -19,9 +19,9 @@ export interface Movie {
     genres?: any[];
   }
 
-  export interface Movies {
+  export interface IMovies {
     page: number;
-    results: Movie[];
+    results: IMovie[];
     total_pages: number;
     total_results: number;
   }

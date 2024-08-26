@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movie } from '../../models/movie';
+import { IMovie } from '../../models/movie';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 })
 export class SliderComponent {
 
-  @Input() dataObs!: Observable<Movie[]>;
+  @Input() dataObs!: Observable<IMovie[]>;
   @Input() imagesBaseUrl = '';
   public slideIndex = 0;
 

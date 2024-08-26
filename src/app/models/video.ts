@@ -1,9 +1,9 @@
-export interface Videos {
-    results: Video[];
+export interface IVideos {
+    results: IVideo[];
     id: string;
   }
   
-  export interface Video {
+  export interface IVideo {
     key: string;
     site: string;
   }

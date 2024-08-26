@@ -1,7 +1,7 @@
-export interface Images {
-    backdrops: Image[];
+export interface IImages {
+    backdrops: IImage[];
   }
   
-  export interface Image {
+  export interface IImage {
     file_path: string;
   }

@@ -1,5 +1,5 @@
 import { Component,Input } from '@angular/core';
-import { Movie } from '../../models/movie';
+import { IMovie } from '../../models/movie';
 import { DatePipe } from '@angular/common';
 import { imagesBaseUrl } from '../../services/movies.service';
 import { RouterModule } from '@angular/router';
@@ -13,5 +13,5 @@ import { RouterModule } from '@angular/router';
 })
 export class MovieComponent {
   public imagesBaseUrl = imagesBaseUrl;
-  @Input() movie!: Movie;
+  @Input() movie!: IMovie;
 }
